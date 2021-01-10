@@ -5,7 +5,7 @@ ruby '3.0.0'
 
 gem 'devise'
 gem 'image_processing'
-
+gem 'carrierwave', '~> 2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
 # Use sqlite3 as the database for Active Record

@@ -1,11 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  # Only allow a list of trusted parameters through.
-  def post_params
-  params.require(:post).permit(:title, :author, :featured_image, :content)
-  end
-
   # GET /posts
   # GET /posts.json
   def index
@@ -30,9 +25,9 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    
     respond_to do |format|
-      if @post.save
+      if @post.save 
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
@@ -74,6 +69,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :author)
-    end
+      params.require(:post).permit(:title, :author, :featured_image, :content)
+      end
 end
